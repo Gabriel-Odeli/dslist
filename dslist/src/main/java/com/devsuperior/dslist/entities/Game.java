@@ -10,39 +10,43 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String tittle;
+    private String title;
 
     @Column(name = "game_year")
     private int year;
     private String genre;
-    private String plataforms;
+    private String platforms;
     private Double score;
     private String imgUrl;
+    
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
 
     public Game(){
     }
 
-    public Game(String tittle, int year, String genre, Double score, String plataforms, String shortDescription, String imgUrl, String longDescription, long id) {
-        this.tittle = tittle;
+    public Game(String title, int year, String genre, Double score, String platforms, String shortDescription, String imgUrl, String longDescription, long id) {
+        this.title = title;
         this.year = year;
         this.genre = genre;
         this.score = score;
-        this.plataforms = plataforms;
+        this.platforms = platforms;
         this.shortDescription = shortDescription;
         this.imgUrl = imgUrl;
         this.longDescription = longDescription;
         this.id = id;
     }
 
-    public String getTittle() {
-        return tittle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public long getId() {
@@ -69,12 +73,12 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlataforms() {
-        return plataforms;
+    public String getPlatforms() {
+        return platforms;
     }
 
-    public void setPlataforms(String plataforms) {
-        this.plataforms = plataforms;
+    public void setPlatforms(String platforms) {
+        this.platforms = platforms;
     }
 
     public Double getScore() {
